@@ -38,6 +38,8 @@ single request. In REST these are followed client-side using the `userId` /
 That extra round-trip is exactly the over-fetching / N+1 behaviour the
 comparison is meant to surface — it is intentional, not an omission.
 
-Collection sub-resources (e.g. `GET /users/:id/posts`) return `[]` for a missing
-or childless parent rather than issuing a second existence query, keeping each
-endpoint to a single database round-trip.
+Collection sub-resources (e.g. `GET /users/:id/posts`) verify the parent exists
+and return `404` if it does not. This mirrors GraphQL, which resolves the parent
+(`user`) before its children (`posts`) and yields `null` for a missing parent —
+so both styles do a parent lookup plus a children query. An existing parent with
+no children returns `[]`.

@@ -25,6 +25,13 @@ router.get("/:id", async (req, res) => {
 
 // Post.comments
 router.get("/:id/comments", async (req, res) => {
+  const post = await getPostById(req.params.id);
+
+  if (!post) {
+    res.status(404).json({ error: "Post not found" });
+    return;
+  }
+
   const rows = await getCommentsByPostId(req.params.id);
   res.json(rows.map(toComment));
 });
