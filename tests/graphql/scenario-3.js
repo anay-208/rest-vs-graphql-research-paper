@@ -46,5 +46,4 @@ export default function () {
         comment_count: data.comments.length,
     }));
 
-    sleep(0.5);
 }

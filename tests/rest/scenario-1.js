@@ -33,5 +33,4 @@ export default function () {
         total_time_ms: totalTime,
     }));
 
-    sleep(0.5);
 }

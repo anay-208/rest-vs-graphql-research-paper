@@ -42,5 +42,4 @@ export default function () {
         unique_commenters: uniqueCommenterIds.length,
     }));
 
-    sleep(0.5);
 }
