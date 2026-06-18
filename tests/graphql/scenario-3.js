@@ -4,9 +4,14 @@ import { sleep } from 'k6';
 const GRAPHQL_URL = __ENV.GRAPHQL_URL;
 
 export const options = {
-    maxDuration: '30m',
-    iterations: 30,
-    vus: 1,
+    scenarios: {
+        default: {
+            executor: 'shared-iterations',
+            vus: 1,
+            iterations: 30,
+            maxDuration: '30m',
+        }
+    }
 };
 
 const query = JSON.stringify({
