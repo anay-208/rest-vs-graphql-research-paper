@@ -4,6 +4,7 @@ import { sleep } from 'k6';
 const GRAPHQL_URL = __ENV.GRAPHQL_URL;
 
 export const options = {
+    maxDuration: '30m',
     iterations: 30,
     vus: 1,
 };
@@ -17,7 +18,7 @@ const query = JSON.stringify({
                 name
                 email
                 bio
-                avatarUrl
+                avatarUrl       
             }
         }
     }`

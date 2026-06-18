@@ -4,6 +4,7 @@ import { sleep } from 'k6';
 const BASE_URL = __ENV.REST_URL;
 
 export const options = {
+    maxDuration: '30m',
     iterations: 30,
     vus: 1,
 };

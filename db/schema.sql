@@ -1,3 +1,4 @@
+-- Created for reference, the actual command run is in db-setup/init.sql -- 
 CREATE TABLE IF NOT EXISTS users (
   id BIGSERIAL PRIMARY KEY,
   name TEXT NOT NULL,
