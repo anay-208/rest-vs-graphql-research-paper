@@ -6,7 +6,7 @@ const GRAPHQL_URL = __ENV.GRAPHQL_URL;
 export const options = {
     scenarios: {
         default: {
-            executor: 'shared-iterations',
+            executor: 'per-vu-iterations',
             vus: 1,
             iterations: 30,
             maxDuration: '30m',
